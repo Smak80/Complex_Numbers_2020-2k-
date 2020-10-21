@@ -17,6 +17,15 @@ void main()
 	AComplex z9 = z2 + z3;
 	AComplex z10;
 	z10 = -z2;
-	
+	cout << z10['R'] << " " << z10['I'] << endl;
+	//cout << z10['A'];
+	z10['R'] = 1;
+	//cout << z10;
+	double k = 2;
+	AComplex z11 = z9 * k * k;
+	cout << z11 << endl;
+	AComplex z12(5.5);
+	//AComplex z13 = 13.7;
+	//AComplex z13 = { 13, 14 };
 	system("pause");
 }

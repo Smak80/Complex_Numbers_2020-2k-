@@ -1,4 +1,6 @@
 #pragma once
+#include <ostream>
+
 class AComplex
 {
 	//Поля
@@ -12,6 +14,10 @@ public:
 	AComplex(double re, double im);
 	//Конструктор копирования
 	AComplex(const AComplex& other);
+
+	explicit AComplex(double re);
+	//Деструктор
+	~AComplex();
 	//Оператор присваивания
 	AComplex& operator=(const AComplex& z2);
 private:
@@ -23,6 +29,11 @@ public:
 	AComplex operator+(const AComplex& z2) const;
 	AComplex operator-(const AComplex& z2) const;
 	AComplex operator-() const;
-	AComplex operator+=(const AComplex& z2);
+	AComplex operator*(double k) const;
+	AComplex& operator+=(const AComplex& z2);
+	bool operator==(const AComplex& z2) const;
+	double operator[](char part) const;
+	double& operator[](char part);
+	friend AComplex operator*(double k, const AComplex& z);
+	friend std::ostream& operator<<(std::ostream& out, AComplex& z);
 };
-
